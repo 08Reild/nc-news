@@ -14,7 +14,7 @@ function SearchBar () {
             <button type="submit">Search</button>
           </form>
         </div>
-      );
+      )
 }
 
 export default SearchBar

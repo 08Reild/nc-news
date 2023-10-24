@@ -1,14 +1,18 @@
+import { Routes, Route, Link} from 'react-router-dom';
+
 function NavBar () {
     return (
-        <>
-        <ul id ="NavBar">
-  <li><a href="app.jsx">Home</a></li>
-  <li><a href="Articles">Articles</a></li>
-  <li><a href="Topics">Topics</a></li>
-  <li><a href="Post">Post</a></li>
-</ul>
-        </>
+        <div>
+        <nav> 
+            <Link to="/">Home</Link>
+            <Link to="/articles">Articles</Link>
+            <Link to="/topics">Topics</Link>
+            <Link to="/post">Post</Link>
+            </nav>
+        </div>
     )
 }
 
 export default NavBar
+
+// Home | Articles | Topics | Post
