@@ -5,7 +5,7 @@ function SearchBar () {
     return (
         <div>
           <form>
-            <label htmlFor="articleId">Search by Article Id:</label>
+            <label htmlFor="articleId"></label>
             <input
               type="text"
               id="articleId"

@@ -3,9 +3,8 @@ import { Routes, Route, Link} from 'react-router-dom';
 function NavBar () {
     return (
         <div>
-        <nav> 
+        <nav className="navbar"> 
             <Link to="/">Home</Link>
-            <Link to="/articles">Articles</Link>
             <Link to="/topics">Topics</Link>
             <Link to="/post">Post</Link>
             </nav>
@@ -14,5 +13,3 @@ function NavBar () {
 }
 
 export default NavBar
-
-// Home | Articles | Topics | Post
