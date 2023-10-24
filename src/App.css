@@ -5,6 +5,13 @@
   text-align: center;
 }
 
-#article_card {
-  display: inline
+.article_cards {
+  display: inline;
+  background-color: red;
+}
+
+.navbar {
+  display: block;
+  padding: 3px;
+  background-color: rgba(128, 128, 128, 0.323);
 }
