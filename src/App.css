@@ -7,11 +7,15 @@
 
 .article_cards {
   display: inline;
-  background-color: red;
+  background-color: blue;
 }
 
 .navbar {
   display: block;
   padding: 3px;
+  background-color: rgba(128, 128, 128, 0.323);
+}
+
+.commentCard {
   background-color: rgba(128, 128, 128, 0.323);
 }
