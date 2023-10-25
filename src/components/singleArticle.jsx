@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function SingleArticle () {
@@ -11,6 +11,7 @@ fetch(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}
 .then((response) => response.json())
 .then((body) => setArticle(body.article))
 }, [article_id])
+
     return (
         <div>
             <h2>{article.title}</h2>
@@ -20,6 +21,7 @@ fetch(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}
             <p>Created: {article.created_at}</p>
             <p>Votes: {article.votes}</p>
             <p>{article.body}</p>
+            <Link to={`/articles/${article.article_id}/comments`}>Comments</Link>
         </div>
     )
 }
