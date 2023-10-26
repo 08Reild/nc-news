@@ -37,6 +37,7 @@ fetch(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}
             <button disabled={articleVotes === 1} onClick={() => {addArticleVote(1)}}>+</button>
             <button disabled={articleVotes === -1} onClick={() => {addArticleVote(-1)}}>-</button>
             <Link to={`/articles/${article.article_id}/comments`}>Comments</Link>
+            <Link to={`/articles/${article.article_id}/post-comment`}>Post Comment</Link>
         </div>
     )
 }

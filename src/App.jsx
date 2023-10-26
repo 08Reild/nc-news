@@ -6,6 +6,7 @@ import Articles from './components/Articles'
 import { Routes, Route } from 'react-router-dom';
 import SingleArticle from './components/singleArticle'
 import Comments from './components/comments'
+import PostComment from './components/PostComment'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
 <Route path="/articles" element={<Articles />} />
 <Route path="/articles/:article_id" element={<SingleArticle />} />
 <Route path="/articles/:article_id/comments" element={<div><SingleArticle/><Comments/></div>} />
+<Route path="/articles/:article_id/post-comment" element={<div><SingleArticle/><PostComment/></div>} />
 <Route path="/*" element={<p>Page Not Found</p>} />
 </Routes>
     </>
