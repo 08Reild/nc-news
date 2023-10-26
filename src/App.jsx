@@ -17,14 +17,14 @@ function App() {
     <Routes>
 <Route path="/" element={<Articles />} />
 <Route path="/articles" element={<Articles />} />
-<Route path="/articles/:article_id" element={<SingleArticle />} />
-<Route path="/articles/:article_id/comments" element={<div><SingleArticle/><Comments/></div>} />
-<Route path="/articles/:article_id/post-comment" element={<div><SingleArticle/><PostComment/></div>} />
-<Route path="/*" element={<p>Page Not Found</p>} />
+<Route path="/articles/:article_id" element={<div><SingleArticle/><PostComment/><Comments/></div>} />
+<Route path="/*" element={<p>Page Not Found</p>}/>
 </Routes>
     </>
   )
 }
+
+// <Route path="/articles/:article_id/comments" element={<div><SingleArticle/><Comments/></div>} />
 
 export default App
 
