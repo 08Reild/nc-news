@@ -18,7 +18,7 @@ function PostComment ({setComments}){
         comment_id: 99,
         body: comment,
         author: username,
-        created_at: dateFormat(Date.now(), "ddd mmm dS yyyy, h:MM:ss TT"),
+        created_at: Date.now(),
         votes: 0
     }
 
@@ -28,6 +28,7 @@ function PostComment ({setComments}){
         setComment("")
         setComments((Comments) => [optimisticComment, ...Comments])
         axios.post(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}/comments`, newComment)
+        .then(() => {setError("")})
         .catch(() => {setError("Comment not submitted, please try again."); setComments((comments) => { return comments.slice(1)});})
         }
     }
