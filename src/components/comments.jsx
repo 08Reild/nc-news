@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Votes from './CommentVotes'
 import axios from 'axios';
+import PostComment from './PostComment';
+import dateFormat, { masks } from "dateformat";
 
 function Comments () {
     const { article_id } = useParams()
@@ -14,6 +16,7 @@ function Comments () {
         }, [article_id])
     return (
         <>
+        <PostComment setComments={setComments}/>
         {comments.map((comment) => {
             return (
             <div key={comment.comment_id} className="commentCard">

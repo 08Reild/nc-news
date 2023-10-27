@@ -1,11 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import dateFormat, { masks } from "dateformat";
+import Comments from './comments'
+import PostComment from './PostComment'
 
 function SingleArticle () {
 const { article_id } = useParams()
 const [article, setArticle] = useState([])
 const [articleVotes, updateArticleVotes] = useState(0)
+const [showComments, setShowComments] = useState(false)
 
 const addArticleVote = (num) => {
     updateArticleVotes((currentVote) => {
@@ -31,12 +35,15 @@ fetch(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}
             <img src={article.article_img_url}></img>
             <p>Written by: {article.author}</p>
             <p>Topic: {article.topic}</p>
-            <p>Created: {article.created_at}</p>
+            <p>Posted: {dateFormat(article.created_at, "ddd mmm dS yyyy, h:MM:ss TT")}</p>
             <p>{article.body}</p>
+            <div className="articleVotes">
             <p>Votes: {(article.votes + articleVotes)}</p>
             <button disabled={articleVotes === 1} onClick={() => {addArticleVote(1)}}>+</button>
             <button disabled={articleVotes === -1} onClick={() => {addArticleVote(-1)}}>-</button>
-            <Link to={`/articles/${article.article_id}/comments`}>Comments</Link>
+            </div>
+            <button onClick={() => {setShowComments((showComments) => !showComments)}}>Comments</button>
+            {showComments ? <Comments/> : null}
         </div>
     )
 }
