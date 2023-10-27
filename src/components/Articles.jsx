@@ -1,11 +1,13 @@
 import {useState, useEffect} from 'react'
 import ArticleCard from './articleCard'
 import { Link } from 'react-router-dom'
-import dateFormat, { masks } from "dateformat";
+import dateFormat from "dateformat";
 
 function Articles () {
 const [selectedTopic, setSelectedTopic] = useState(null)
 const [articles, setArticles] = useState([])
+const [sortBy, setSortBy] = useState("created_at");
+const [sortOrder, setSortOrder] = useState("desc")
 
 useEffect(() => {
 fetch("https://northcoders-news-api-ekq5.onrender.com/api/articles")
@@ -18,9 +20,19 @@ const filteredArticles = selectedTopic ? articles.filter(article => article.topi
     return (
         <div>
         <ul>
+            <div>
             <button onClick={()=>{setSelectedTopic('coding')}}>Coding</button>
             <button onClick={()=>{setSelectedTopic('football')}}>Football</button>
             <button onClick={()=>{setSelectedTopic('cooking')}}>Cooking</button>
+            </div>
+            <div>
+                <select value={sortBy}>
+                    <option value="created_at">Date</option>
+                    <option value="comment_count">Comments</option>
+                    <option value="votes">Votes</option>
+
+                </select>
+            </div>
             {filteredArticles.map((article) => {
             return (
                 <li key={article.article_id} className ="article_cards">

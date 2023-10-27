@@ -23,3 +23,9 @@
 .articleVotes {
   background-color: rgba(128, 128, 128, 0.323);
 }
+
+.article_cards:link {
+  color: black;
+  background-color: rgba(128, 128, 128, 0.323);
+  text-decoration: none;
+}
