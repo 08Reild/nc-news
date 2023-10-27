@@ -5,8 +5,6 @@ function NavBar () {
         <div>
         <nav className="navbar"> 
             <Link to="/">Home</Link>
-            <Link to="/topics">Topics</Link>
-            <Link to="/post">Post</Link>
             </nav>
         </div>
     )

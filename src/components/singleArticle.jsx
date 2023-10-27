@@ -35,7 +35,7 @@ fetch(`https://northcoders-news-api-ekq5.onrender.com/api/articles/${article_id}
             <img src={article.article_img_url}></img>
             <p>Written by: {article.author}</p>
             <p>Topic: {article.topic}</p>
-            <p>Posted: {dateFormat(article.created_at, "ddd mmm dS yyyy, h:MM:ss TT")}</p>
+            <p>Posted: {dateFormat(article.created_at, "ddd dd/mm/yy, h:MMTT")}</p>
             <p>{article.body}</p>
             <div className="articleVotes">
             <p>Votes: {(article.votes + articleVotes)}</p>

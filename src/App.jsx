@@ -11,7 +11,6 @@ function App() {
     <>
     <Header />
     <NavBar />
-    <SearchBar />
     <Routes>
 <Route path="/" element={<Articles />} />
 <Route path="/articles" element={<Articles />} />
@@ -21,8 +20,6 @@ function App() {
     </>
   )
 }
-
-// <Route path="/articles/:article_id/comments" element={<div><SingleArticle/><Comments/></div>} />
 
 export default App
 
